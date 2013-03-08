@@ -9,9 +9,9 @@ module Guard
         def guard_message( result, duration )
           case result
           when true
-            "Rails Best Practices checklist has been run successfully\nin %0.2f seconds." % [duration]
+            "Checklist has been run successfully\nin %0.2f seconds." % [duration]
           else
-            "Rails Best Practices checklist run has failed!\nPlease check manually."
+            "Checklist run has failed!\nPlease check manually."
           end
         end
 
@@ -23,7 +23,7 @@ module Guard
           message = guard_message( result, duration )
           image   = guard_image( result )
 
-          ::Guard::Notifier.notify( message, :title => 'Rails Best Practices checklist complete', :image => image )
+          ::Guard::Notifier.notify( message, :title => 'Rails Best Practices', :image => image )
         end
       end
 
