@@ -44,7 +44,7 @@ module Guard
     def run_bestpractices
       UI.info 'Running Rails Best Practices checklist', :reset => true
       started_at = Time.now
-      cmd = 'rails_best_practices'
+      cmd = 'rails_best_practices '
       cmd += options[:cli] if options[:cli]
       @result = system(cmd)
       Notifier::notify( @result, Time.now - started_at ) if notify?
